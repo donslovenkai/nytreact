@@ -13,22 +13,20 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 
-
 // Serve Static Content
 app.use(express.static(process.cwd() + '/public'));
 
-
-
 // Database Configuration with Mongoose
-// ---------------------------------------------------------------
+// Heroku not ready yet, commenting out...
 // Connect to localhost if not a production environment
-if(process.env.NODE_ENV == 'production'){
+//if(process.env.NODE_ENV == 'production'){
   // Gotten using `heroku config | grep MONGODB_URI` command in Command Line
-  mongoose.connect('mongodb://herokuTBD');
-}
-else{
-  mongoose.connect('mongodb://localhost/nytreact');
-}
+//  mongoose.connect('mongodb://herokuTBD');
+//}
+//else{
+//  mongoose.connect('mongodb://localhost/nytreact');
+//}
+mongoose.connect('mongodb://localhost/nytreact');
 var db = mongoose.connection;
 
 // Show any Mongoose errors
@@ -45,12 +43,12 @@ db.once('open', function() {
 var Article = require('./models/Article.js');
 // ------------------------------------------------------------------
 
-// Import Routes/Controller
+// Import the routes controller
 var router = require('./controllers/controller.js');
 app.use('/', router);
 
 
-// Launch App
+// Launch app
 var port = process.env.PORT || 3000;
 app.listen(port, function(){
   console.log('Running on port: ' + port);
