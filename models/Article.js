@@ -1,36 +1,44 @@
+// Mongoose is used to create an Article schema and model
+
 // Mongoose dependency
 var mongoose = require('mongoose');
 
 // Create the Mongoose schema class
 var Schema = mongoose.Schema;
 
-// Create the Article schema
+// Instantiate a userSchema object with the Schema class we just made
 var ArticleSchema = new Schema({
 
 // Articles fields: title, date, and url link to article
 
-  // Article title
+  // Article title; a string containing the title of the stored article from NYTimes.com
+  // Trim any trailing whitespace, make all data objects required
   title: {
     type: String,
-    required: true
+    trim: true,
+    required: true,
   },
 
-  // Date of Article
+  // Publish date and time of the article
   date: {
     type: String,
-    required: true
+    required: true,
   },
-  
-  // Link to Article
+  //alternate code, might try
+  // type:Date,
+  // default: Date.now,
+  // required: true,
+
+  // URL of the article on NYTimes.com
   url: {
     type: String,
-    required: true
+    trim: true,
+    required: true,
   }
-
 });
 
-// Create the Article model using Mongoose
+// Create Create the Article model with the ArticleSchema schema
 var Article = mongoose.model('Article', ArticleSchema);
 
-// Export the model
+// Export User model, so it can be used in server.js with a require
 module.exports = Article;
