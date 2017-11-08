@@ -5,7 +5,9 @@ var axios = require('axios');
 var articleQuery = function(topic, beginYear, endYear){
 
 // Authentication key from the NY Times API
-  var authKey = "ad790ca987ad4702a0d0621f5248be40";
+ // var authKey = "ad790ca987ad4702a0d0621f5248be40";
+// Try Dan's key:
+  var authKey = "b9f91d369ff59547cd47b931d8cbc56b:0:74623931";
 
   var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + authKey + "&q=" +
                   topic + "&begin_date=" + beginYear + "0101" + "&end_date=" + endYear + "1231";

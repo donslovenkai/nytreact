@@ -22087,7 +22087,7 @@
 	        React.createElement(
 	          "h1",
 	          { className: "text-center" },
-	          React.createElement("img", { style: { width: "70%" }, src: "img/timesmachine.png", alt: "Times Machine" })
+	          React.createElement("img", { style: { width: "70%" }, src: "img/nyt-header.jpg", alt: "NY Times Search" })
 	        ),
 	        React.createElement(
 	          "h2",
@@ -22095,7 +22095,7 @@
 	          React.createElement(
 	            "b",
 	            null,
-	            "The Unofficial New York Times Archive Search"
+	            "New York Times Archive Search"
 	            // React.createElement(
 	            //   "i",
 	            //   null,
@@ -22106,7 +22106,7 @@
 	        React.createElement(
 	          "h4",
 	          { className: "text-center" },
-	          "Select any topic to search, as well as years to look in the archives."
+	          "Specify a topic and years to search the archives."
 	        )
 	      ),
 	      React.createElement(Query, { _setSearchFeilds: this._setSearchFeilds }),
